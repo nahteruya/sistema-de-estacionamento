@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fefae0;
+}
+body header {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #283618;
+  color: #fefae0;
+}
+body main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.novoCadastro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px auto;
+  margin-top: 20px;
+  /* padding: 15px;
+  border: 2px solid #BC6C25;
+  border-radius: 8px;
+  background-color: #DDA15E; */
+}
+.novoCadastro h5 {
+  font-size: 18px;
+}
+.novoCadastro form {
+  margin: 10px 0px;
+}
+.novoCadastro label:last-of-type {
+  margin-left: 20px;
+} 
+.novoCadastro form input {
+  height: 20px;
+  padding: 2px 5px;
+  margin-top: 15px;
+  margin-left: 8px;
+}
+button {
+  /* margin-top: 10px; */
+  font-family: 'Montserrat', sans-serif;
+  font: 18px;
+  padding: 3px 8px;
+  background-color: #DDA15E;
+}
+h6 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+}
+table, td, th {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table {
+  margin: 20px 100px;
+}
+th, td {
+  text-align: center;
+  padding: 5px;
+}
