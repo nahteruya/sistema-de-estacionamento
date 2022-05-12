@@ -14,11 +14,14 @@ function capturarDados() {
   const inputPlacaVeiculo = document.getElementById('placa') as HTMLInputElement;
   const placaVeiculo = inputPlacaVeiculo.value;
 
-  const novoVeiculo: IVeiculo = {
+  let novoVeiculo: IVeiculo = {
     nome: nomeVeiculo,
     placa: placaVeiculo,
-    entrada: new Date().toISOString()
+    entrada: new Date()
   }; 
+
+  (document.getElementById('nome') as HTMLInputElement).value = '';
+  (document.getElementById('placa') as HTMLInputElement).value = '';
 
   if(!nomeVeiculo || !placaVeiculo) {
     alert("Os campos nome e placa do veículo são obrigatórios!");
@@ -35,7 +38,7 @@ function manipularPatio() {
     row.innerHTML = `
       <td>${veiculo.nome}</tr>
       <td>${veiculo.placa}</tr>
-      <td>${veiculo.entrada}</tr>
+      <td>${veiculo.entrada.toLocaleString('pt-BR', {timeZone:'America/Sao_Paulo'})}</tr>
       <td>
         <button class='delete' data-placa='${veiculo.placa}'>Excluir</button>
       </tr>`;
@@ -64,7 +67,8 @@ function manipularPatio() {
   function removerVeiculo(placa:string) {
     const veiculoParaRemover = lerDadosLocalStorage().find((veiculo:IVeiculo) => veiculo.placa == placa);
 
-    const tempoNoPatio = calcularTempo((new Date).getTime() - new Date((veiculoParaRemover.entrada)).getTime());
+    /* const currentTime = new Date().toLocaleString('pt-BR', {timeZone:'America/Sao_Paulo'}) */
+    const tempoNoPatio = calcularTempo((new Date()).getTime() - new Date((veiculoParaRemover.entrada)).getTime());
 
     if (!confirm(`O veículo permaneceu por ${tempoNoPatio}. Deseja encerrar?`)) return;
 
@@ -80,3 +84,8 @@ function calcularTempo(miliseg:number) {
 
   return `${hora} horas e ${min} minutos`;
 }
+let date = new Date(Date.UTC(2021, 5, 28, 3, 0, 0));
+console.log('Date in India: ' + date);
+let formatter = new Intl.DateTimeFormat('en-US', { timeZone: "America/Denver" });   
+let usDate = formatter.format(date);
+console.log(usDate);
