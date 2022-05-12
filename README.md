@@ -9,4 +9,4 @@ O sistema desenvolvido possui as seguintes funcionalidades:
     - o sistema retorna o tempo que o carro permaneceu no pátio;
     - o sistema confirma se o usuário deseja realmente excluir o carro. 
 
-<img src='./print-projeto.png' width='400'>
+<img src='./print-projeto.png' width='700'>
